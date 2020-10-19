@@ -6,7 +6,6 @@ main.cpp:
 ```
 #include <iostream>
 #include "rpi_bmp280.h"
-#include "rpi_tca9548a.h"
 
 int main(void){
   rpi_bmp280 bmp;
@@ -24,7 +23,8 @@ The user can access to the following functions:
 
 ### int init(int id)
 Initialize the sensor in normal mode.
-- id: I2C address.
+- id: I2C address.   
+Return -1 if an error occurs, otherwise return 0.
 
 ### void config(int p_overscan, int t_overscan, int mode, int standby, int filter)
 Set the operating mode and configuration.
