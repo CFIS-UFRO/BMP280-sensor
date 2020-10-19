@@ -1,4 +1,4 @@
-This code allows to use the BMP280 sensor for measuring pressure and temperature (you can add easily altitude measuring).   
+This code allows to use the BMP280 sensor for measuring pressure and temperature (you can add easily altitude measuring) on the Raspberry Pi board.   
 It is written in c++ using the wiringPi library.
 
 # Example
