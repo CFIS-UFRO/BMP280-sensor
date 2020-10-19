@@ -17,7 +17,7 @@ int main(void){
   std::cout << "Temperature (°C): " << t << std::endl;
 }
 ```
-To compile: g++ main.cpp -o main -lwiringPi.
+To compile: g++ main.cpp rpi_bmp280.h rpi_bmp280.cpp -o main -lwiringPi
 
 # Available functions
 The user can access to the following functions:
