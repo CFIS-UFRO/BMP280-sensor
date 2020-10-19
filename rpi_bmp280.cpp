@@ -8,13 +8,8 @@ Author: Bryan Casanelli - bryancasanelli@gmail.com
 #include <unistd.h> //usleep
 #include <stdint.h>
 #include "rpi_bmp280.h"
-#ifndef __arm__
-  #include "fake_wiringPiI2C.h"
-  #include "fake_wiringPi.h"
-#else
-  #include <wiringPiI2C.h>
-  #include <wiringPi.h>
-#endif
+#include <wiringPiI2C.h>
+#include <wiringPi.h>
 
 /* BMP280 default address */
 #define   BMP280_I2CADDR 0x76
