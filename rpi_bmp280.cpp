@@ -156,11 +156,10 @@ void rpi_bmp280::load_calibration(){
 
 uint32_t rpi_bmp280::read_raw(int reg){
   uint32_t raw;
-  raw = wiringPiI2CReadReg8(this->fd, reg);
+  raw = wiringPiI2CReadReg16(this->fd, reg);
+  raw = ((raw & 0xFF00) >> 8) | ((raw & 0xFF) << 8);
   raw <<= 8;
-  raw += wiringPiI2CReadReg8(this->fd, reg+1);
-  raw <<= 8;
-  raw += wiringPiI2CReadReg8(this->fd, reg+2);
+  raw = raw | wiringPiI2CReadReg8(this->fd, reg + 2);
   raw >>= 4;
   return raw;
 }
